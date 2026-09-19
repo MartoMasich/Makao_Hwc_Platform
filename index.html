@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex, nofollow">
+  <title>MAKAO HWC Platform — Tanzania Operations</title>
+  
+  <!-- Source Code Protection -->
+  <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable keyboard shortcuts for developer tools and view source
+    document.addEventListener('keydown', function(e) {
+      // F12 - Developer Tools
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I - Developer Tools
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+J - Developer Tools Console
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+C - Inspect Element
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+U - View Source
+      if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+K - Developer Tools Console
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 75) {
+        e.preventDefault();
+        return false;
+      }
+    }, false);
+
+    // Detect if developer tools are open
+    var devtools = { open: false, orientation: null };
+    var threshold = 160;
+    setInterval(function() {
+      if (window.outerHeight - window.innerHeight > threshold || 
+          window.outerWidth - window.innerWidth > threshold) {
+        if (!devtools.open) {
+          devtools.open = true;
+          alert('⚠️ SECURITY WARNING ⚠️\n\nAccessing the source code or developer tools is prohibited.\nThis application is protected and monitored.\n\nPlease close all developer tools and inspector windows.');
+          window.location.href = 'about:blank';
+        }
+      } else {
+        devtools.open = false;
+      }
+    }, 500);
+
+    // Disable console access
+    var console = {
+      log: function() {},
+      warn: function() {},
+      error: function() {},
+      info: function() {},
+      debug: function() {}
+    };
+
+    // Override common developer tool detection methods
+    Object.defineProperty(window, 'console', {
+      value: {},
+      writable: false
+    });
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --asphalt: #14161a;
+      --asphalt-2: #1d2026;
+      --cream: #f6f4ef;
+      --ink: #1a1c20;
+      --ink-soft: #5b606c;
+      --line: #e7e4db;
+      --primary: #d4542e;
+      --primary-dark: #b8391f;
+      --primary-light: #ff6b42;
+      --signal-red: #e0453f;
+      --signal-red-bg: #fdecea;
+      --signal-amber: #c98a12;
+      --signal-amber-bg: #fdf3df;
+      --signal-green: #1e9e6f;
+      --signal-green-bg: #e6f5ef;
+      --trace-blue: #4f46e5;
+      --trace-purple: #8b5cf6;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      background: 
+        radial-gradient(circle at 15% 10%, #23262e 0%, transparent 45%),
+        repeating-linear-gradient(115deg, #16181d 0 2px, #14161a 2px 46px),
+        var(--asphalt);
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--ink);
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      gap: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: var(--asphalt-2);
+      border-right: 1px solid #2b2f38;
+      padding: 24px 18px;
+      height: 100vh;
+      overflow-y: auto;
+      position: fixed;
+      left: 0;
+      top: 0;
+      flex-shrink: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #2b2f38;
+    }
+
+    .sidebar-logo {
+      font-size: 24px;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+
+    .sidebar-sub {
+      font-size: 10px;
+      color: #9096a3;
+    }
+
+    .nav-group {
+      margin-bottom: 24px;
+    }
+
+    .nav-group-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #787e8c;
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 13px;
+      margin-bottom: 6px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s;
+      color: #dfe1e6;
+      font-size: 13px;
+      border: 1px solid transparent;
+      user-select: none;
+    }
+
+    .nav-item:hover {
+      background: #22252c;
+      border-color: #30343d;
+    }
+
+    .nav-item.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .nav-emoji {
+      font-size: 16px;
+      width: 20px;
+    }
+
+    .nav-arrow {
+      margin-left: auto;
+      transition: transform .2s;
+      font-size: 12px;
+    }
+
+    .nav-item.expanded .nav-arrow {
+      transform: rotate(90deg);
+    }
+
+    .nav-submenu {
+      display: none;
+      margin-top: 6px;
+      padding-left: 0;
+      border-left: 2px solid #30343d;
+      margin-left: 10px;
+    }
+
+    .nav-submenu.active {
+      display: block;
+    }
+
+    .nav-subitem {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      margin-bottom: 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .2s;
+      color: #dfe1e6;
+      font-size: 12px;
+      border: 1px solid transparent;
+      padding-left: 20px;
+      user-select: none;
+    }
+
+    .nav-subitem:hover {
+      background: #22252c;
+      border-color: #30343d;
+    }
+
+    .nav-subitem.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      margin-left: 280px;
+      padding: 28px 28px 60px;
+      overflow-y: auto;
+      min-height: 100vh;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .page-header {
+      margin-bottom: 28px;
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--cream);
+      margin: 0 0 6px;
+    }
+
+    .page-subtitle {
+      font-size: 13px;
+      color: #9096a3;
+    }
+
+    /* Dashboard */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      transition: all .2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+    }
+
+    .stat-card.critical {
+      border-color: var(--signal-red);
+      background: var(--signal-red-bg);
+    }
+
+    .stat-card.warning {
+      border-color: var(--signal-amber);
+      background: var(--signal-amber-bg);
+    }
+
+    .stat-card.success {
+      border-color: var(--signal-green);
+      background: var(--signal-green-bg);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .stat-card.critical .stat-value { color: var(--signal-red); }
+    .stat-card.warning .stat-value { color: var(--signal-amber); }
+    .stat-card.success .stat-value { color: var(--signal-green); }
+
+    .stat-sub {
+      font-size: 11px;
+      color: var(--ink-soft);
+      margin-top: 6px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn {
+      background: #f0f0f0;
+      color: var(--ink);
+    }
+
+    .btn:hover {
+      background: #e0e0e0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--ink);
+      transition: border-color .2s;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(212,84,46,0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-row.full {
+      grid-template-columns: 1fr;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .table thead {
+      background: #f0f0f0;
+    }
+
+    .table th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .table tr:hover {
+      background: #f9f9f9;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .badge-success {
+      background: var(--signal-green-bg);
+      color: var(--signal-green);
+    }
+
+    .badge-warning {
+      background: var(--signal-amber-bg);
+      color: var(--signal-amber);
+    }
+
+    .badge-danger {
+      background: var(--signal-red-bg);
+      color: var(--signal-red);
+    }
+
+    /* Search */
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: var(--font-body);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(212,84,46,0.1);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .pagination button {
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all .2s;
+    }
+
+    .pagination button:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .pagination button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .pagination-info {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    /* Filter Group */
+    .filter-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all .2s;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* List Items */
+    .list-item {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .list-item-content {
+      flex: 1;
+    }
+
+    .list-item-title {
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .list-item-meta {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .list-item-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-xs {
+      padding: 4px 8px;
+      font-size: 11px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-xs-edit {
+      background: var(--trace-blue);
+      color: white;
+    }
+
+    .btn-xs-delete {
+      background: var(--signal-red-bg);
+      color: var(--signal-red);
+    }
+
+    .btn-xs-delete:hover {
+      background: var(--signal-red);
+      color: white;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: var(--cream);
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--ink-soft);
+    }
+
+    .modal-close:hover {
+      color: var(--ink);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--ink-soft);
+    }
+
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .empty-state-text {
+      font-size: 14px;
+    }
+
+    /* Analytics Section */
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .chart-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-title {
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .chart-placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+      border-radius: 8px;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 240px;
+        padding: 16px 12px;
+      }
+
+      .main {
+        margin-left: 240px;
+        padding: 16px;
+      }
+
+      .page-title {
+        font-size: 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .analytics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-group {
+        flex-direction: column;
+      }
+
+      .filter-btn {
+        width: 100%;
+      }
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .detail-value {
+      color: var(--ink-soft);
+    }
+
+    /* Searchable Dropdown */
+    .searchable-dropdown {
+      position: relative;
+    }
+
+    .searchable-dropdown-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--ink);
+      transition: border-color .2s;
+      cursor: pointer;
+      background: white;
+    }
+
+    .searchable-dropdown-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(212,84,46,0.1);
+    }
+
+    .searchable-dropdown-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid var(--line);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 250px;
+      overflow-y: auto;
+      display: none;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .searchable-dropdown-list.active {
+      display: block;
+    }
+
+    .searchable-dropdown-item {
+      padding: 10px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      transition: background-color .2s;
+      color: var(--ink);
+    }
+
+    .searchable-dropdown-item:hover {
+      background-color: #f5f5f5;
+    }
+
+    .searchable-dropdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .searchable-dropdown-item.selected {
+      background-color: rgba(212,84,46,0.1);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .empty-dropdown-message {
+      padding: 10px 12px;
+      color: var(--ink-soft);
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🛡️</div>
+        <div>
+          <h2 class="sidebar-title">MAKAO</h2>
+          <p class="sidebar-sub">Human-Wildlife Conflict</p>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Main</div>
+        <div class="nav-item active" onclick="navigateTo('dashboard', this)">
+          <span class="nav-emoji">📊</span>
+          <span>Dashboard</span>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Operations</div>
+        <div class="nav-item" onclick="navigateTo('incident-report', this)">
+          <span class="nav-emoji">🚨</span>
+          <span>Incident Reporting</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('investigation', this)">
+          <span class="nav-emoji">🔍</span>
+          <span>Investigations</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('alerts', this)">
+          <span class="nav-emoji">⚠️</span>
+          <span>Alert Distribution</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('sensor-config', this)">
+          <span class="nav-emoji">📡</span>
+          <span>Sensor Configuration</span>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Resources</div>
+        <div class="nav-item" onclick="navigateTo('rangers', this)">
+          <span class="nav-emoji">👮</span>
+          <span>Ranger Management</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('livestock', this)">
+          <span class="nav-emoji">🐄</span>
+          <span>Livestock Registry</span>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Finance</div>
+        <div class="nav-item" onclick="navigateTo('compensation', this)">
+          <span class="nav-emoji">💰</span>
+          <span>Compensation Claims</span>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">System</div>
+        <div class="nav-item" onclick="navigateTo('reports', this)">
+          <span class="nav-emoji">📈</span>
+          <span>Reports & Analytics</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('users', this)">
+          <span class="nav-emoji">👥</span>
+          <span>User Management</span>
+        </div>
+        <div class="nav-item" onclick="navigateTo('system-settings', this)">
+          <span class="nav-emoji">⚙️</span>
+          <span>System Settings</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="section active">
+        <div class="page-header">
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">System overview and key metrics</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="stat-card success">
+            <div class="stat-label">Active Rangers</div>
+            <div class="stat-value" id="stat-rangers">12</div>
+            <div class="stat-sub">On duty</div>
+          </div>
+          <div class="stat-card warning">
+            <div class="stat-label">Pending Investigations</div>
+            <div class="stat-value" id="stat-investigations">3</div>
+            <div class="stat-sub">Awaiting review</div>
+          </div>
+          <div class="stat-card critical">
+            <div class="stat-label">Active Incidents</div>
+            <div class="stat-value" id="stat-active">7</div>
+            <div class="stat-sub">Requiring response</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Registered Livestock</div>
+            <div class="stat-value" id="stat-livestock">156</div>
+            <div class="stat-sub">Total inventory</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INCIDENT REPORTING -->
+      <section id="incident-report" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Incident Reporting</h1>
+          <p class="page-subtitle">Record and track human-wildlife conflict incidents</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openIncidentForm()" style="margin-bottom: 20px;">➕ Report New Incident</button>
+
+          <h3>View All Incidents</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="incidentSearch" placeholder="Search incidents by type, location, or date...">
+          </div>
+
+          <div id="incidentsList" class="incidents-list"></div>
+          <div class="pagination" id="incidentsPagination"></div>
+        </div>
+      </section>
+
+      <!-- INVESTIGATION LOG -->
+      <section id="investigation" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Investigation Logs</h1>
+          <p class="page-subtitle">Document investigation findings and outcomes</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openInvestigationForm()" style="margin-bottom: 20px;">➕ Save Investigation Log</button>
+
+          <h3>View All Investigation Logs</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="investigationSearch" placeholder="Search by incident ID, ranger name, or status...">
+          </div>
+
+          <div class="filter-group">
+            <button class="filter-btn active" onclick="filterInvestigations('all', this)">All</button>
+            <button class="filter-btn" onclick="filterInvestigations('day', this)">Day</button>
+            <button class="filter-btn" onclick="filterInvestigations('week', this)">Week</button>
+            <button class="filter-btn" onclick="filterInvestigations('month', this)">Month</button>
+            <button class="filter-btn" onclick="filterInvestigations('year', this)">Year</button>
+          </div>
+
+          <div id="investigationsList" class="investigations-list"></div>
+          <div class="pagination" id="investigationsPagination"></div>
+        </div>
+      </section>
+
+      <!-- SENSOR CONFIGURATION -->
+      <section id="sensor-config" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Sensor Configuration</h1>
+          <p class="page-subtitle">Manage IoT sensors and detection systems</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openSensorForm()" style="margin-bottom: 20px;">➕ Add Configuration</button>
+
+          <h3>View All Sensor Configurations</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="sensorSearch" placeholder="Search by sensor ID, location, or status...">
+          </div>
+
+          <div id="sensorsList" class="sensors-list"></div>
+          <div class="pagination" id="sensorsPagination"></div>
+        </div>
+      </section>
+
+      <!-- ALERT DISTRIBUTION -->
+      <section id="alerts" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Alert Distribution</h1>
+          <p class="page-subtitle">Send alerts to rangers and community members</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openAlertForm()" style="margin-bottom: 20px;">➕ Send Alert</button>
+
+          <h3>View All Alerts</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="alertSearch" placeholder="Search alerts by type, recipient, or date...">
+          </div>
+
+          <div id="alertsList" class="alerts-list"></div>
+          <div class="pagination" id="alertsPagination"></div>
+        </div>
+      </section>
+
+      <!-- RANGER MANAGEMENT -->
+      <section id="rangers" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Ranger Management</h1>
+          <p class="page-subtitle">Manage ranger personnel and assignments</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openRangerForm()" style="margin-bottom: 20px;">➕ Add New Ranger</button>
+
+          <h3>View All Rangers</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="rangerSearch" placeholder="Search by name, ID, or location...">
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table" id="rangersTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Ranger ID</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="rangersList"></tbody>
+            </table>
+          </div>
+          <div id="rangersEmpty" class="empty-state">
+            <div class="empty-state-icon">👤</div>
+            <div class="empty-state-text">No rangers added yet. Click "Add New Ranger" to get started.</div>
+          </div>
+          <div class="pagination" id="rangersPagination"></div>
+        </div>
+      </section>
+
+      <!-- COMPENSATION CLAIMS -->
+      <section id="compensation" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Compensation Claims</h1>
+          <p class="page-subtitle">Process livestock loss compensation requests</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openCompensationForm()" style="margin-bottom: 20px;">➕ New Claim</button>
+
+          <h3>View All Claims</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="compensationSearch" placeholder="Search by claimant name or claim ID...">
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table" id="compensationTable">
+              <thead>
+                <tr>
+                  <th>Claim ID</th>
+                  <th>Claimant</th>
+                  <th>Amount (KES)</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="compensationList"></tbody>
+            </table>
+          </div>
+          <div id="compensationEmpty" class="empty-state">
+            <div class="empty-state-icon">💰</div>
+            <div class="empty-state-text">No compensation claims yet. Click "New Claim" to submit one.</div>
+          </div>
+          <div class="pagination" id="compensationPagination"></div>
+        </div>
+      </section>
+
+      <!-- LIVESTOCK REGISTRY -->
+      <section id="livestock" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Livestock Registry</h1>
+          <p class="page-subtitle">Maintain community livestock inventory</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openLivestockForm()" style="margin-bottom: 20px;">➕ Register Livestock</button>
+
+          <h3>View All Livestock</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="livestockSearch" placeholder="Search by owner name or location...">
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table" id="livestockTable">
+              <thead>
+                <tr>
+                  <th>Owner</th>
+                  <th>Location</th>
+                  <th>Animal Type</th>
+                  <th>Count</th>
+                  <th>Value (KES)</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="livestockList"></tbody>
+            </table>
+          </div>
+          <div id="livestockEmpty" class="empty-state">
+            <div class="empty-state-icon">🐄</div>
+            <div class="empty-state-text">No livestock registered yet. Click "Register Livestock" to add inventory.</div>
+          </div>
+          <div class="pagination" id="livestockPagination"></div>
+        </div>
+      </section>
+
+      <!-- REPORTS & ANALYTICS -->
+      <section id="reports" class="section">
+        <div class="page-header">
+          <h1 class="page-title">Reports & Analytics</h1>
+          <p class="page-subtitle">Generate reports and analyze trends</p>
+        </div>
+
+        <div class="card">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Report Type</label>
+              <select class="form-select" id="reportType">
+                <option>Monthly Summary</option>
+                <option>Incident Analysis</option>
+                <option>Compensation Report</option>
+                <option>Sensor Performance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date Range</label>
+              <input type="month" class="form-input" id="reportMonth">
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="generateReport()">📊 Generate Report</button>
+            <button class="btn" onclick="exportAsCSV()">📥 Export as CSV</button>
+            <button class="btn" onclick="exportAsPDF()">📄 Export as PDF</button>
+          </div>
+
+          <div id="reportOutput" style="margin-top: 30px; display: none;">
+            <h3>Generated Report</h3>
+            <div id="reportContent" class="card"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Trend Analysis</h3>
+          <div class="analytics-grid">
+            <div class="chart-card">
+              <div class="chart-title">Incidents by Type</div>
+              <div class="chart-placeholder">
+                <svg width="100%" height="200" viewBox="0 0 300 200">
+                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-size="12">📊 Incident Trend Chart</text>
+                </svg>
+              </div>
+            </div>
+            <div class="chart-card">
+              <div class="chart-title">Compensation Trends</div>
+              <div class="chart-placeholder">
+                <svg width="100%" height="200" viewBox="0 0 300 200">
+                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-size="12">💹 Compensation Analysis</text>
+                </svg>
+              </div>
+            </div>
+            <div class="chart-card">
+              <div class="chart-title">Response Time Distribution</div>
+              <div class="chart-placeholder">
+                <svg width="100%" height="200" viewBox="0 0 300 200">
+                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-size="12">⏱️ Response Timeline</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- USER MANAGEMENT -->
+      <section id="users" class="section">
+        <div class="page-header">
+          <h1 class="page-title">User Management</h1>
+          <p class="page-subtitle">Manage system users and permissions</p>
+        </div>
+
+        <div class="card">
+          <button class="btn btn-primary" onclick="openUserForm()" style="margin-bottom: 20px;">➕ Add New User</button>
+
+          <h3>View All Users</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="userSearch" placeholder="Search by name, email, or role...">
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table" id="usersTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="usersList"></tbody>
+            </table>
+          </div>
+          <div id="usersEmpty" class="empty-state">
+            <div class="empty-state-icon">👥</div>
+            <div class="empty-state-text">No users added yet. Click "Add New User" to create user accounts.</div>
+          </div>
+          <div class="pagination" id="usersPagination"></div>
+        </div>
+      </section>
+
+      <!-- SYSTEM SETTINGS -->
+      <section id="system-settings" class="section">
+        <div class="page-header">
+          <h1 class="page-title">System Settings</h1>
+          <p class="page-subtitle">Configure platform parameters</p>
+        </div>
+
+        <div class="card">
+          <h3>General Settings</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Platform Name</label>
+              <input type="text" class="form-input" id="platformName" value="MAKAO HWC Platform">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Country</label>
+              <input type="text" class="form-input" id="platformCountry" value="Tanzania">
+            </div>
+          </div>
+
+          <h3>Alert Thresholds</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Herd Size Alert (animals)</label>
+              <input type="number" class="form-input" id="herdSizeAlert" value="5">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Response Time Target (hours)</label>
+              <input type="number" class="form-input" id="responseTimeTarget" value="4" step="0.5">
+            </div>
+          </div>
+
+          <h3>Sensor Configuration</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Default Detection Radius (m)</label>
+              <input type="number" class="form-input" id="detectionRadius" value="500">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Data Sync Interval (minutes)</label>
+              <input type="number" class="form-input" id="syncInterval" value="5">
+            </div>
+          </div>
+
+          <h3>View All Settings</h3>
+          <div class="search-wrapper">
+            <input type="text" class="search-input" id="settingsSearch" placeholder="Search settings by name or category...">
+          </div>
+
+          <div id="settingsList" class="settings-list"></div>
+          <div class="pagination" id="settingsPagination"></div>
+
+          <div class="btn-group" style="margin-top: 30px;">
+            <button class="btn btn-primary" onclick="saveSettings()">💾 Save Settings</button>
+            <button class="btn" onclick="resetSettings()">↻ Reset to Defaults</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div id="incidentModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Report New Incident</h2>
+        <button class="modal-close" onclick="closeModal('incidentModal')">✕</button>
+      </div>
+      <form onsubmit="submitIncident(event)">
+        <div class="form-group">
+          <label class="form-label">Incident Type</label>
+          <select class="form-select" name="type" required>
+            <option>Herd Movement</option>
+            <option>Crop Raid</option>
+            <option>Predator Attack</option>
+            <option>Property Damage</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-input" name="location" placeholder="e.g., Mkurumudzi" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" name="date" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Severity</label>
+            <select class="form-select" name="severity" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea class="form-textarea" name="description" required></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Save Incident</button>
+          <button type="button" class="btn" onclick="closeModal('incidentModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="investigationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Save Investigation Log</h2>
+        <button class="modal-close" onclick="closeModal('investigationModal')">✕</button>
+      </div>
+      <form onsubmit="submitInvestigation(event)">
+        <div class="form-group">
+          <label class="form-label">Incident ID</label>
+          <div class="searchable-dropdown" id="incidentIdDropdown">
+            <input 
+              type="text" 
+              class="searchable-dropdown-input" 
+              id="incidentIdInput"
+              placeholder="Search or select incident ID..." 
+              required
+              readonly
+              onfocus="toggleIncidentDropdown(true)"
+              onclick="toggleIncidentDropdown(true)">
+            <input type="hidden" name="incidentId" id="incidentIdHidden">
+            <div class="searchable-dropdown-list" id="incidentIdList"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Ranger Name</label>
+          <input type="text" class="form-input" name="rangerName" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Investigation Date</label>
+            <input type="date" class="form-input" name="date" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" name="status" required>
+              <option>Ongoing</option>
+              <option>Completed</option>
+              <option>On Hold</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Findings</label>
+          <textarea class="form-textarea" name="findings" required></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Save Investigation</button>
+          <button type="button" class="btn" onclick="closeModal('investigationModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="sensorModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add Sensor Configuration</h2>
+        <button class="modal-close" onclick="closeModal('sensorModal')">✕</button>
+      </div>
+      <form onsubmit="submitSensor(event)">
+        <div class="form-group">
+          <label class="form-label">Sensor ID</label>
+          <input type="text" class="form-input" name="sensorId" placeholder="e.g., SEN-001" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-input" name="location" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Detection Radius (m)</label>
+            <input type="number" class="form-input" name="radius" value="500" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" name="status" required>
+              <option>Active</option>
+              <option>Inactive</option>
+              <option>Maintenance</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notes</label>
+          <textarea class="form-textarea" name="notes"></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Save Configuration</button>
+          <button type="button" class="btn" onclick="closeModal('sensorModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Send Alert</h2>
+        <button class="modal-close" onclick="closeModal('alertModal')">✕</button>
+      </div>
+      <form onsubmit="submitAlert(event)">
+        <div class="form-group">
+          <label class="form-label">Alert Type</label>
+          <select class="form-select" name="type" required>
+            <option>Threat Alert</option>
+            <option>All Clear</option>
+            <option>Update</option>
+            <option>Emergency</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Recipients</label>
+          <select class="form-select" name="recipients" required>
+            <option>All Rangers</option>
+            <option>Specific Community</option>
+            <option>Designated Leaders</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" name="message" required></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Send Alert</button>
+          <button type="button" class="btn" onclick="closeModal('alertModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="rangerModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add New Ranger</h2>
+        <button class="modal-close" onclick="closeModal('rangerModal')">✕</button>
+      </div>
+      <form onsubmit="submitRanger(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" name="lastName" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Ranger ID</label>
+          <input type="text" class="form-input" name="rangerId" placeholder="e.g., RNG-001" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Assigned Location</label>
+          <input type="text" class="form-input" name="location" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" name="phone" required>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Add Ranger</button>
+          <button type="button" class="btn" onclick="closeModal('rangerModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="compensationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">New Compensation Claim</h2>
+        <button class="modal-close" onclick="closeModal('compensationModal')">✕</button>
+      </div>
+      <form onsubmit="submitCompensation(event)">
+        <div class="form-group">
+          <label class="form-label">Claimant Name</label>
+          <input type="text" class="form-input" name="claimant" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Incident Date</label>
+          <input type="date" class="form-input" name="incidentDate" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Animals Lost</label>
+            <input type="number" class="form-input" name="animalsLost" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Claimed Amount (KES)</label>
+            <input type="number" class="form-input" name="amount" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-input" name="location" required>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Submit Claim</button>
+          <button type="button" class="btn" onclick="closeModal('compensationModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="livestockModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Register Livestock</h2>
+        <button class="modal-close" onclick="closeModal('livestockModal')">✕</button>
+      </div>
+      <form onsubmit="submitLivestock(event)">
+        <div class="form-group">
+          <label class="form-label">Owner Name</label>
+          <input type="text" class="form-input" name="owner" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-input" name="location" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Animal Type</label>
+            <select class="form-select" name="animalType" required>
+              <option>Cattle</option>
+              <option>Goats</option>
+              <option>Sheep</option>
+              <option>Donkeys</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Count</label>
+            <input type="number" class="form-input" name="count" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Value (KES)</label>
+          <input type="number" class="form-input" name="value" required>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Register</button>
+          <button type="button" class="btn" onclick="closeModal('livestockModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add New User</h2>
+        <button class="modal-close" onclick="closeModal('userModal')">✕</button>
+      </div>
+      <form onsubmit="submitUser(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" name="lastName" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Role</label>
+          <select class="form-select" name="role" required>
+            <option>Administrator</option>
+            <option>Ranger</option>
+            <option>Coordinator</option>
+            <option>Viewer</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">✅ Add User</button>
+          <button type="button" class="btn" onclick="closeModal('userModal')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Application State
+    const appState = {
+      currentSection: 'dashboard',
+      incidents: [],
+      investigations: [],
+      sensors: [],
+      alerts: [],
+      rangers: [],
+      compensation: [],
+      livestock: [],
+      users: [],
+      settings: [],
+      currentFilter: 'all',
+      pageSize: 5,
+      currentPage: {}
+    };
+
+    // Initialize from localStorage
+    function initializeApp() {
+      const saved = localStorage.getItem('makaoAppState');
+      if (saved) {
+        const savedState = JSON.parse(saved);
+        Object.assign(appState, savedState);
+      }
+      loadAllData();
+    }
+
+    // Save state to localStorage
+    function saveAppState() {
+      localStorage.setItem('makaoAppState', JSON.stringify(appState));
+    }
+
+    // Navigation
+    function navigateTo(sectionId, element) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      
+      document.querySelectorAll('.nav-item, .nav-subitem').forEach(item => {
+        item.classList.remove('active');
+      });
+      if (element) {
+        element.classList.add('active');
+      }
+
+      appState.currentSection = sectionId;
+      
+      // Render data for the current section
+      if (sectionId === 'incident-report') renderIncidents();
+      else if (sectionId === 'investigation') renderInvestigations();
+      else if (sectionId === 'sensor-config') renderSensors();
+      else if (sectionId === 'alerts') renderAlerts();
+      else if (sectionId === 'rangers') renderRangers();
+      else if (sectionId === 'compensation') renderCompensation();
+      else if (sectionId === 'livestock') renderLivestock();
+      else if (sectionId === 'users') renderUsers();
+      else if (sectionId === 'system-settings') renderSettings();
+    }
+
+    // Modal Functions
+    function openIncidentForm() {
+      document.getElementById('incidentModal').classList.add('active');
+    }
+
+    function openInvestigationForm() {
+      document.getElementById('investigationModal').classList.add('active');
+      populateIncidentIdDropdown();
+    }
+
+    // Searchable Dropdown Functions for Incident ID
+    function populateIncidentIdDropdown() {
+      const list = document.getElementById('incidentIdList');
+      if (appState.incidents.length === 0) {
+        list.innerHTML = '<div class="empty-dropdown-message">No incidents available. Please create an incident first.</div>';
+        return;
+      }
+      
+      list.innerHTML = appState.incidents.map(incident => `
+        <div class="searchable-dropdown-item" onclick="selectIncidentId('${incident.id}')">${incident.id} - ${incident.type}</div>
+      `).join('');
+    }
+
+    function toggleIncidentDropdown(show) {
+      const list = document.getElementById('incidentIdList');
+      if (show) {
+        list.classList.add('active');
+      }
+    }
+
+    function selectIncidentId(incidentId) {
+      document.getElementById('incidentIdInput').value = incidentId;
+      document.getElementById('incidentIdHidden').value = incidentId;
+      document.getElementById('incidentIdList').classList.remove('active');
+    }
+
+    function openSensorForm() {
+      document.getElementById('sensorModal').classList.add('active');
+    }
+
+    function openAlertForm() {
+      document.getElementById('alertModal').classList.add('active');
+    }
+
+    function openRangerForm() {
+      document.getElementById('rangerModal').classList.add('active');
+    }
+
+    function openCompensationForm() {
+      document.getElementById('compensationModal').classList.add('active');
+    }
+
+    function openLivestockForm() {
+      document.getElementById('livestockModal').classList.add('active');
+    }
+
+    function openUserForm() {
+      document.getElementById('userModal').classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+    }
+
+    // Form Submissions
+    function submitIncident(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const incident = {
+        id: 'INC-' + Date.now(),
+        type: formData.get('type'),
+        location: formData.get('location'),
+        date: formData.get('date'),
+        severity: formData.get('severity'),
+        description: formData.get('description'),
+        status: 'Active',
+        dateAdded: new Date().toISOString()
+      };
+      appState.incidents.unshift(incident);
+      saveAppState();
+      closeModal('incidentModal');
+      event.target.reset();
+      renderIncidents();
+      updateDashboard();
+      alert('✅ Incident reported successfully! ID: ' + incident.id);
+    }
+
+    function submitInvestigation(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const investigation = {
+        id: 'INV-' + Date.now(),
+        incidentId: formData.get('incidentId'),
+        rangerName: formData.get('rangerName'),
+        date: formData.get('date'),
+        status: formData.get('status'),
+        findings: formData.get('findings'),
+        dateAdded: new Date().toISOString()
+      };
+      appState.investigations.unshift(investigation);
+      saveAppState();
+      closeModal('investigationModal');
+      event.target.reset();
+      renderInvestigations();
+      updateDashboard();
+      alert('✅ Investigation saved successfully!');
+    }
+
+    function submitSensor(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const sensor = {
+        id: formData.get('sensorId'),
+        location: formData.get('location'),
+        radius: formData.get('radius'),
+        status: formData.get('status'),
+        notes: formData.get('notes'),
+        dateAdded: new Date().toISOString()
+      };
+      appState.sensors.unshift(sensor);
+      saveAppState();
+      closeModal('sensorModal');
+      event.target.reset();
+      renderSensors();
+      alert('✅ Sensor configuration saved!');
+    }
+
+    function submitAlert(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const alert = {
+        id: 'ALT-' + Date.now(),
+        type: formData.get('type'),
+        recipients: formData.get('recipients'),
+        message: formData.get('message'),
+        dateSent: new Date().toLocaleString(),
+        status: 'Sent'
+      };
+      appState.alerts.unshift(alert);
+      saveAppState();
+      closeModal('alertModal');
+      event.target.reset();
+      renderAlerts();
+      alert('✅ Alert sent to ' + formData.get('recipients') + '!');
+    }
+
+    function submitRanger(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const ranger = {
+        id: formData.get('rangerId'),
+        name: formData.get('firstName') + ' ' + formData.get('lastName'),
+        location: formData.get('location'),
+        phone: formData.get('phone'),
+        status: 'Active',
+        dateAdded: new Date().toISOString()
+      };
+      appState.rangers.unshift(ranger);
+      saveAppState();
+      closeModal('rangerModal');
+      event.target.reset();
+      renderRangers();
+      updateDashboard();
+      alert('✅ Ranger added successfully!');
+    }
+
+    function submitCompensation(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const claim = {
+        id: 'CLM-' + Date.now(),
+        claimant: formData.get('claimant'),
+        amount: formData.get('amount'),
+        status: 'Pending',
+        date: formData.get('incidentDate'),
+        location: formData.get('location'),
+        dateSubmitted: new Date().toISOString()
+      };
+      appState.compensation.unshift(claim);
+      saveAppState();
+      closeModal('compensationModal');
+      event.target.reset();
+      renderCompensation();
+      alert('✅ Compensation claim submitted!');
+    }
+
+    function submitLivestock(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const livestock = {
+        id: 'LST-' + Date.now(),
+        owner: formData.get('owner'),
+        location: formData.get('location'),
+        animalType: formData.get('animalType'),
+        count: formData.get('count'),
+        value: formData.get('value'),
+        status: 'Active',
+        dateAdded: new Date().toISOString()
+      };
+      appState.livestock.unshift(livestock);
+      saveAppState();
+      closeModal('livestockModal');
+      event.target.reset();
+      renderLivestock();
+      updateDashboard();
+      alert('✅ Livestock registered successfully!');
+    }
+
+    function submitUser(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const user = {
+        id: 'USR-' + Date.now(),
+        name: formData.get('firstName') + ' ' + formData.get('lastName'),
+        email: formData.get('email'),
+        role: formData.get('role'),
+        status: 'Active',
+        dateAdded: new Date().toISOString()
+      };
+      appState.users.unshift(user);
+      saveAppState();
+      closeModal('userModal');
+      event.target.reset();
+      renderUsers();
+      alert('✅ User added successfully!');
+    }
+
+    // Render Functions
+    function renderIncidents() {
+      const container = document.getElementById('incidentsList');
+      const searchTerm = document.getElementById('incidentSearch').value.toLowerCase();
+      let filtered = appState.incidents.filter(i => 
+        i.type.toLowerCase().includes(searchTerm) ||
+        i.location.toLowerCase().includes(searchTerm) ||
+        i.date.includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🚨</div><div class="empty-state-text">No incidents found.</div></div>';
+        return;
+      }
+
+      const paged = paginate(filtered, 'incidents');
+      container.innerHTML = paged.items.map(inc => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${inc.type} - ${inc.id}</div>
+            <div class="list-item-meta">📍 ${inc.location} | 📅 ${inc.date} | Severity: <span class="badge badge-${inc.severity.toLowerCase() === 'critical' ? 'danger' : inc.severity.toLowerCase() === 'high' ? 'warning' : 'success'}">${inc.severity}</span></div>
+          </div>
+          <div class="list-item-actions">
+            <button class="btn-xs btn-xs-edit" onclick="viewIncidentDetails('${inc.id}')">View</button>
+            <button class="btn-xs btn-xs-delete" onclick="deleteIncident('${inc.id}')">Delete</button>
+          </div>
+        </div>
+      `).join('');
+
+      renderPagination(paged, 'incidents');
+    }
+
+    function renderInvestigations() {
+      const container = document.getElementById('investigationsList');
+      const searchTerm = document.getElementById('investigationSearch').value.toLowerCase();
+      let filtered = appState.investigations.filter(i => 
+        i.incidentId.toLowerCase().includes(searchTerm) ||
+        i.rangerName.toLowerCase().includes(searchTerm) ||
+        i.status.toLowerCase().includes(searchTerm)
+      );
+
+      if (appState.currentFilter !== 'all') {
+        filtered = filterByDateRange(filtered, appState.currentFilter);
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🔍</div><div class="empty-state-text">No investigations found.</div></div>';
+        return;
+      }
+
+      const paged = paginate(filtered, 'investigations');
+      container.innerHTML = paged.items.map(inv => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${inv.incidentId} - ${inv.id}</div>
+            <div class="list-item-meta">👮 ${inv.rangerName} | 📅 ${inv.date} | Status: <span class="badge badge-${inv.status === 'Completed' ? 'success' : 'warning'}">${inv.status}</span></div>
+          </div>
+          <div class="list-item-actions">
+            <button class="btn-xs btn-xs-edit" onclick="viewInvestigationDetails('${inv.id}')">View</button>
+            <button class="btn-xs btn-xs-delete" onclick="deleteInvestigation('${inv.id}')">Delete</button>
+          </div>
+        </div>
+      `).join('');
+
+      renderPagination(paged, 'investigations');
+    }
+
+    function renderSensors() {
+      const container = document.getElementById('sensorsList');
+      const searchTerm = document.getElementById('sensorSearch').value.toLowerCase();
+      let filtered = appState.sensors.filter(s => 
+        s.id.toLowerCase().includes(searchTerm) ||
+        s.location.toLowerCase().includes(searchTerm) ||
+        s.status.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📡</div><div class="empty-state-text">No sensor configurations found.</div></div>';
+        return;
+      }
+
+      const paged = paginate(filtered, 'sensors');
+      container.innerHTML = paged.items.map(sensor => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${sensor.id}</div>
+            <div class="list-item-meta">📍 ${sensor.location} | Radius: ${sensor.radius}m | Status: <span class="badge badge-${sensor.status === 'Active' ? 'success' : 'warning'}">${sensor.status}</span></div>
+          </div>
+          <div class="list-item-actions">
+            <button class="btn-xs btn-xs-edit" onclick="viewSensorDetails('${sensor.id}')">View</button>
+            <button class="btn-xs btn-xs-delete" onclick="deleteSensor('${sensor.id}')">Delete</button>
+          </div>
+        </div>
+      `).join('');
+
+      renderPagination(paged, 'sensors');
+    }
+
+    function renderAlerts() {
+      const container = document.getElementById('alertsList');
+      const searchTerm = document.getElementById('alertSearch').value.toLowerCase();
+      let filtered = appState.alerts.filter(a => 
+        a.type.toLowerCase().includes(searchTerm) ||
+        a.recipients.toLowerCase().includes(searchTerm) ||
+        a.dateSent.includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">⚠️</div><div class="empty-state-text">No alerts sent yet.</div></div>';
+        return;
+      }
+
+      const paged = paginate(filtered, 'alerts');
+      container.innerHTML = paged.items.map(alert => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${alert.type}</div>
+            <div class="list-item-meta">To: ${alert.recipients} | 📅 ${alert.dateSent}</div>
+          </div>
+          <div class="list-item-actions">
+            <button class="btn-xs btn-xs-delete" onclick="deleteAlert('${alert.id}')">Delete</button>
+          </div>
+        </div>
+      `).join('');
+
+      renderPagination(paged, 'alerts');
+    }
+
+    function renderRangers() {
+      const tbody = document.getElementById('rangersList');
+      const container = document.getElementById('rangersEmpty');
+      const searchTerm = document.getElementById('rangerSearch').value.toLowerCase();
+      
+      let filtered = appState.rangers.filter(r => 
+        r.name.toLowerCase().includes(searchTerm) ||
+        r.id.toLowerCase().includes(searchTerm) ||
+        r.location.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.style.display = 'block';
+        tbody.innerHTML = '';
+        document.getElementById('rangersPagination').innerHTML = '';
+        return;
+      }
+
+      container.style.display = 'none';
+      const paged = paginate(filtered, 'rangers');
+      tbody.innerHTML = paged.items.map(ranger => `
+        <tr>
+          <td>${ranger.name}</td>
+          <td>${ranger.id}</td>
+          <td>${ranger.location}</td>
+          <td><span class="badge badge-success">${ranger.status}</span></td>
+          <td>
+            <button class="btn-xs btn-xs-delete" onclick="deleteRanger('${ranger.id}')">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      renderPagination(paged, 'rangers');
+    }
+
+    function renderCompensation() {
+      const tbody = document.getElementById('compensationList');
+      const container = document.getElementById('compensationEmpty');
+      const searchTerm = document.getElementById('compensationSearch').value.toLowerCase();
+      
+      let filtered = appState.compensation.filter(c => 
+        c.claimant.toLowerCase().includes(searchTerm) ||
+        c.id.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.style.display = 'block';
+        tbody.innerHTML = '';
+        document.getElementById('compensationPagination').innerHTML = '';
+        return;
+      }
+
+      container.style.display = 'none';
+      const paged = paginate(filtered, 'compensation');
+      tbody.innerHTML = paged.items.map(claim => `
+        <tr>
+          <td>${claim.id}</td>
+          <td>${claim.claimant}</td>
+          <td>${Number(claim.amount).toLocaleString()}</td>
+          <td><span class="badge badge-${claim.status === 'Approved' ? 'success' : 'warning'}">${claim.status}</span></td>
+          <td>${claim.date}</td>
+          <td>
+            <button class="btn-xs btn-xs-delete" onclick="deleteCompensation('${claim.id}')">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      renderPagination(paged, 'compensation');
+    }
+
+    function renderLivestock() {
+      const tbody = document.getElementById('livestockList');
+      const container = document.getElementById('livestockEmpty');
+      const searchTerm = document.getElementById('livestockSearch').value.toLowerCase();
+      
+      let filtered = appState.livestock.filter(l => 
+        l.owner.toLowerCase().includes(searchTerm) ||
+        l.location.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.style.display = 'block';
+        tbody.innerHTML = '';
+        document.getElementById('livestockPagination').innerHTML = '';
+        return;
+      }
+
+      container.style.display = 'none';
+      const paged = paginate(filtered, 'livestock');
+      tbody.innerHTML = paged.items.map(item => `
+        <tr>
+          <td>${item.owner}</td>
+          <td>${item.location}</td>
+          <td>${item.animalType}</td>
+          <td>${item.count}</td>
+          <td>${Number(item.value).toLocaleString()}</td>
+          <td><span class="badge badge-success">${item.status}</span></td>
+          <td>
+            <button class="btn-xs btn-xs-delete" onclick="deleteLivestock('${item.id}')">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      renderPagination(paged, 'livestock');
+    }
+
+    function renderUsers() {
+      const tbody = document.getElementById('usersList');
+      const container = document.getElementById('usersEmpty');
+      const searchTerm = document.getElementById('userSearch').value.toLowerCase();
+      
+      let filtered = appState.users.filter(u => 
+        u.name.toLowerCase().includes(searchTerm) ||
+        u.email.toLowerCase().includes(searchTerm) ||
+        u.role.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.style.display = 'block';
+        tbody.innerHTML = '';
+        document.getElementById('usersPagination').innerHTML = '';
+        return;
+      }
+
+      container.style.display = 'none';
+      const paged = paginate(filtered, 'users');
+      tbody.innerHTML = paged.items.map(user => `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td><span class="badge badge-success">${user.status}</span></td>
+          <td>
+            <button class="btn-xs btn-xs-delete" onclick="deleteUser('${user.id}')">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      renderPagination(paged, 'users');
+    }
+
+    function renderSettings() {
+      const container = document.getElementById('settingsList');
+      const searchTerm = document.getElementById('settingsSearch').value.toLowerCase();
+      
+      const settings = [
+        { name: 'Platform Name', value: document.getElementById('platformName').value, category: 'General' },
+        { name: 'Country', value: document.getElementById('platformCountry').value, category: 'General' },
+        { name: 'Herd Size Alert', value: document.getElementById('herdSizeAlert').value + ' animals', category: 'Alerts' },
+        { name: 'Response Time Target', value: document.getElementById('responseTimeTarget').value + ' hours', category: 'Alerts' },
+        { name: 'Detection Radius', value: document.getElementById('detectionRadius').value + 'm', category: 'Sensor' },
+        { name: 'Sync Interval', value: document.getElementById('syncInterval').value + ' minutes', category: 'Sensor' }
+      ];
+
+      let filtered = settings.filter(s => 
+        s.name.toLowerCase().includes(searchTerm) ||
+        s.category.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-text">No settings found.</div></div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(setting => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${setting.name}</div>
+            <div class="list-item-meta">${setting.category}</div>
+          </div>
+          <div class="list-item-content" style="text-align: right;">
+            <strong>${setting.value}</strong>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadAllData() {
+      renderIncidents();
+      renderInvestigations();
+      renderSensors();
+      renderAlerts();
+      renderRangers();
+      renderCompensation();
+      renderLivestock();
+      renderUsers();
+      renderSettings();
+    }
+
+    // Pagination
+    function paginate(items, type) {
+      if (!appState.currentPage[type]) {
+        appState.currentPage[type] = 1;
+      }
+      
+      const page = appState.currentPage[type];
+      const start = (page - 1) * appState.pageSize;
+      const end = start + appState.pageSize;
+      
+      return {
+        items: items.slice(start, end),
+        totalPages: Math.ceil(items.length / appState.pageSize),
+        currentPage: page,
+        totalItems: items.length
+      };
+    }
+
+    function renderPagination(paged, type) {
+      const container = document.getElementById(type + 'Pagination');
+      if (paged.totalPages <= 1) {
+        container.innerHTML = '';
+        return;
+      }
+
+      let html = '<span class="pagination-info">Page ' + paged.currentPage + ' of ' + paged.totalPages + '</span>';
+      
+      if (paged.currentPage > 1) {
+        html += '<button onclick="goToPage(' + (paged.currentPage - 1) + ', \'' + type + '\')">← Previous</button>';
+      }
+
+      for (let i = 1; i <= paged.totalPages; i++) {
+        html += '<button class="' + (i === paged.currentPage ? 'active' : '') + '" onclick="goToPage(' + i + ', \'' + type + '\')">' + i + '</button>';
+      }
+
+      if (paged.currentPage < paged.totalPages) {
+        html += '<button onclick="goToPage(' + (paged.currentPage + 1) + ', \'' + type + '\')">Next →</button>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    function goToPage(page, type) {
+      appState.currentPage[type] = page;
+      if (type === 'incidents') renderIncidents();
+      else if (type === 'investigations') renderInvestigations();
+      else if (type === 'sensors') renderSensors();
+      else if (type === 'alerts') renderAlerts();
+      else if (type === 'rangers') renderRangers();
+      else if (type === 'compensation') renderCompensation();
+      else if (type === 'livestock') renderLivestock();
+      else if (type === 'users') renderUsers();
+    }
+
+    // Filter by date range
+    function filterByDateRange(items, range) {
+      const now = new Date();
+      const cutoff = new Date();
+      
+      if (range === 'day') cutoff.setDate(now.getDate() - 1);
+      else if (range === 'week') cutoff.setDate(now.getDate() - 7);
+      else if (range === 'month') cutoff.setMonth(now.getMonth() - 1);
+      else if (range === 'year') cutoff.setFullYear(now.getFullYear() - 1);
+      
+      return items.filter(item => new Date(item.date || item.dateAdded) >= cutoff);
+    }
+
+    function filterInvestigations(range, element) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      appState.currentFilter = range;
+      renderInvestigations();
+    }
+
+    // Delete functions
+    function deleteIncident(id) {
+      if (confirm('Are you sure?')) {
+        appState.incidents = appState.incidents.filter(i => i.id !== id);
+        saveAppState();
+        renderIncidents();
+      }
+    }
+
+    function deleteInvestigation(id) {
+      if (confirm('Are you sure?')) {
+        appState.investigations = appState.investigations.filter(i => i.id !== id);
+        saveAppState();
+        renderInvestigations();
+      }
+    }
+
+    function deleteSensor(id) {
+      if (confirm('Are you sure?')) {
+        appState.sensors = appState.sensors.filter(s => s.id !== id);
+        saveAppState();
+        renderSensors();
+      }
+    }
+
+    function deleteAlert(id) {
+      if (confirm('Are you sure?')) {
+        appState.alerts = appState.alerts.filter(a => a.id !== id);
+        saveAppState();
+        renderAlerts();
+      }
+    }
+
+    function deleteRanger(id) {
+      if (confirm('Are you sure?')) {
+        appState.rangers = appState.rangers.filter(r => r.id !== id);
+        saveAppState();
+        renderRangers();
+        updateDashboard();
+      }
+    }
+
+    function deleteCompensation(id) {
+      if (confirm('Are you sure?')) {
+        appState.compensation = appState.compensation.filter(c => c.id !== id);
+        saveAppState();
+        renderCompensation();
+      }
+    }
+
+    function deleteLivestock(id) {
+      if (confirm('Are you sure?')) {
+        appState.livestock = appState.livestock.filter(l => l.id !== id);
+        saveAppState();
+        renderLivestock();
+        updateDashboard();
+      }
+    }
+
+    function deleteUser(id) {
+      if (confirm('Are you sure?')) {
+        appState.users = appState.users.filter(u => u.id !== id);
+        saveAppState();
+        renderUsers();
+      }
+    }
+
+    // View Details
+    function viewIncidentDetails(id) {
+      const incident = appState.incidents.find(i => i.id === id);
+      if (incident) {
+        alert(`Incident: ${incident.type}\nLocation: ${incident.location}\nDate: ${incident.date}\nSeverity: ${incident.severity}\n\nDescription: ${incident.description}`);
+      }
+    }
+
+    function viewInvestigationDetails(id) {
+      const inv = appState.investigations.find(i => i.id === id);
+      if (inv) {
+        alert(`Investigation: ${inv.id}\nIncident: ${inv.incidentId}\nRanger: ${inv.rangerName}\nDate: ${inv.date}\nStatus: ${inv.status}\n\nFindings: ${inv.findings}`);
+      }
+    }
+
+    function viewSensorDetails(id) {
+      const sensor = appState.sensors.find(s => s.id === id);
+      if (sensor) {
+        alert(`Sensor: ${sensor.id}\nLocation: ${sensor.location}\nRadius: ${sensor.radius}m\nStatus: ${sensor.status}\n\nNotes: ${sensor.notes}`);
+      }
+    }
+
+    // Reporting
+    function generateReport() {
+      const reportType = document.getElementById('reportType').value;
+      const month = document.getElementById('reportMonth').value;
+      
+      let reportContent = `<h4>${reportType}</h4>`;
+      reportContent += `<p><strong>Period:</strong> ${month}</p>`;
+      
+      if (reportType === 'Monthly Summary') {
+        reportContent += `
+          <div class="detail-row">
+            <span>Total Incidents:</span>
+            <strong>${appState.incidents.length}</strong>
+          </div>
+          <div class="detail-row">
+            <span>Active Investigations:</span>
+            <strong>${appState.investigations.filter(i => i.status === 'Ongoing').length}</strong>
+          </div>
+          <div class="detail-row">
+            <span>Pending Claims:</span>
+            <strong>${appState.compensation.filter(c => c.status === 'Pending').length}</strong>
+          </div>
+        `;
+      } else if (reportType === 'Incident Analysis') {
+        const types = {};
+        appState.incidents.forEach(i => {
+          types[i.type] = (types[i.type] || 0) + 1;
+        });
+        reportContent += '<div>';
+        Object.entries(types).forEach(([type, count]) => {
+          reportContent += `<div class="detail-row"><span>${type}:</span><strong>${count}</strong></div>`;
+        });
+        reportContent += '</div>';
+      }
+      
+      document.getElementById('reportContent').innerHTML = reportContent;
+      document.getElementById('reportOutput').style.display = 'block';
+      alert('✅ Report generated successfully!');
+    }
+
+    function exportAsCSV() {
+      const data = appState.incidents.map(i => `${i.id},${i.type},${i.location},${i.date},${i.severity}`).join('\n');
+      const csv = 'ID,Type,Location,Date,Severity\n' + data;
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'makao_report.csv';
+      a.click();
+      alert('✅ Data exported as CSV!');
+    }
+
+    function exportAsPDF() {
+      alert('✅ Exporting as PDF...\n\nIn a production environment, this would use a PDF library like jsPDF to generate a formatted PDF report.');
+    }
+
+    // Settings
+    function saveSettings() {
+      const settings = {
+        platformName: document.getElementById('platformName').value,
+        platformCountry: document.getElementById('platformCountry').value,
+        herdSizeAlert: document.getElementById('herdSizeAlert').value,
+        responseTimeTarget: document.getElementById('responseTimeTarget').value,
+        detectionRadius: document.getElementById('detectionRadius').value,
+        syncInterval: document.getElementById('syncInterval').value
+      };
+      
+      appState.settings = [settings];
+      saveAppState();
+      renderSettings();
+      alert('✅ Settings saved successfully!');
+    }
+
+    function resetSettings() {
+      if (confirm('Are you sure? This will reset all settings to defaults.')) {
+        document.getElementById('platformName').value = 'MAKAO HWC Platform';
+        document.getElementById('platformCountry').value = 'Tanzania';
+        document.getElementById('herdSizeAlert').value = '5';
+        document.getElementById('responseTimeTarget').value = '4';
+        document.getElementById('detectionRadius').value = '500';
+        document.getElementById('syncInterval').value = '5';
+        saveSettings();
+        alert('✅ Settings reset to defaults!');
+      }
+    }
+
+    // Dashboard Update
+    function updateDashboard() {
+      document.getElementById('stat-rangers').textContent = appState.rangers.length;
+      document.getElementById('stat-investigations').textContent = appState.investigations.filter(i => i.status !== 'Completed').length;
+      document.getElementById('stat-active').textContent = appState.incidents.filter(i => i.status === 'Active').length;
+      document.getElementById('stat-livestock').textContent = appState.livestock.reduce((sum, l) => sum + parseInt(l.count || 0), 0);
+    }
+
+    // Search listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeApp();
+      updateDashboard();
+
+      // Add search listeners
+      document.getElementById('incidentSearch')?.addEventListener('input', renderIncidents);
+      document.getElementById('investigationSearch')?.addEventListener('input', renderInvestigations);
+      document.getElementById('sensorSearch')?.addEventListener('input', renderSensors);
+      document.getElementById('alertSearch')?.addEventListener('input', renderAlerts);
+      document.getElementById('rangerSearch')?.addEventListener('input', renderRangers);
+      document.getElementById('compensationSearch')?.addEventListener('input', renderCompensation);
+      document.getElementById('livestockSearch')?.addEventListener('input', renderLivestock);
+      document.getElementById('userSearch')?.addEventListener('input', renderUsers);
+      document.getElementById('settingsSearch')?.addEventListener('input', renderSettings);
+
+      // Set default month to current
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      document.getElementById('reportMonth').value = `${year}-${month}`;
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('incidentIdDropdown');
+        if (dropdown && !dropdown.contains(event.target)) {
+          document.getElementById('incidentIdList').classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
